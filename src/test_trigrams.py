@@ -1,8 +1,13 @@
 """This is our tests for our Trigrams."""
 
 
-#Test input for word_count = word_count  - that 200 words is 200 words
-def main(path, word_count):
+def test_list():
+    """Testing to check string is list."""
+    from trigrams import read_text
+    assert type(read_text('../poe_test.txt')) == list
 
 
-#Test for /n , spaces  then punctuation
+def test_dict():
+    """Testing to check that we have a dictionary."""
+    from trigrams import make_dict, read_text
+    assert type(make_dict(read_text('../poe_test.txt'))) == dict
