@@ -26,3 +26,21 @@ def test_dict():
 #     from trigrams import make_dict, read_text
 #     story_dict = make_dict(read_text('../poe_test.txt'))
 #     assert story_dict[key] == value
+
+
+"""These are tests ideas for testing our coming up functions."""
+def test_word_count(word_count):
+    """Testing word count of 200."""
+    from trigrams import make_story
+    assert word_count == 200
+
+
+def test_story(story):
+    """Testing story function from key/val pairs."""
+    from trigrams import make_story
+    assert make_story == story 
+
+
+def test_key_val_dups():
+    """Testing key/val pairs for duplicates."""
+    from trigrams import 
