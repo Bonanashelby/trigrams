@@ -11,7 +11,7 @@ def main(some_file, word_count):
 def read_text(some_file):
     '''This function gets text from a file and returns a list.'''
     open_file = io.open(some_file, encoding='utf-8')
-    text = open_file.read().replace('\n', ' ').split(' ')
+    text = open_file.read().replace('\n', ' ').split()
     open_file.close()
     return text
 
@@ -37,5 +37,5 @@ def make_story(word_count):
     pass
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': # pragma no cover
     main('../poe_test.txt', 200)
