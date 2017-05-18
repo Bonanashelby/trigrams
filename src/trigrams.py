@@ -11,9 +11,9 @@ def main(some_file, word_count):
 def read_text(some_file):
     '''This function gets text from a file and returns a list.'''
     open_file = io.open(some_file, encoding='utf-8')
-    text = open_file.read().replace('\n', ' ')
+    text = open_file.read().replace('\n', ' ').split(' ')
     open_file.close()
-    return text.split(' ')
+    return text
 
 
 # Reads list and makes dictionary
