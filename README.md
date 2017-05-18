@@ -1,2 +1,2 @@
 # trigrams
-Pair programming with Morgan on the Trigrams exercise 
+Pair programming with Anna and Morgan on the Trigrams exercise 
