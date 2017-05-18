@@ -3,7 +3,7 @@ import io
 
 # function that implements trigram algorithm
 def main(some_file, word_count):
-    print(read_text(some_file))
+    print(make_dict(read_text(some_file)))
     print(200)
 
 
@@ -20,7 +20,11 @@ def make_dict(some_list):
     """generate trigram key/value pairs"""
     story_dict = {}
     for i in range(len(some_list) - 2):
-        story_dict['{} {}'.format(some_list[i], some_list[i + 1])] = some_list[i + 2]
+        story_key = '{} {}'.format(some_list[i], some_list[i + 1])
+        if story_key in story_dict:
+            story_dict[story_key].append(some_list[i + 2])
+        else:
+            story_dict[story_key] = [some_list[i + 2]]
     return story_dict
 
 
