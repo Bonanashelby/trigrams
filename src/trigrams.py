@@ -1,3 +1,4 @@
+"""This is a module that takes a text file and returns a generated story."""
 import io
 
 
