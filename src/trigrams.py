@@ -3,9 +3,6 @@ import io
 import random
 
 
-# TEXT = ''
-
-
 # function that implements trigram algorithm
 def main(some_file, word_count):
     """Take a file, make a dictionary, and return a story."""
@@ -37,7 +34,7 @@ def make_dict(some_list):
 def make_story(story_dict, word_count):
     """Return generated story."""
     story = random.choice(list(story_dict.keys())) + ' '
-    for i in range(word_count):
+    while len(story.split()) < word_count:
         last_two_words = ' '.join(story.split()[-2:])
         if last_two_words in story_dict:
             if len(story_dict[last_two_words]) > 1:
@@ -48,6 +45,7 @@ def make_story(story_dict, word_count):
         else:
             story_add = random.choice(list(story_dict.keys())) + ' '
         story = story + story_add
+    print(len(story.split()))
     return story
 
 

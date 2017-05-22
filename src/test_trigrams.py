@@ -1,11 +1,21 @@
 """This is our tests for our Trigrams."""
-import pytest
 
 
-DICT_TEST = [
-    ['At the most remote end of the crypt there appeared another less spacious.', 'At the', ['most']],
-    ['the most cake the most pie', 'the most', ['cake', 'pie']]
-]
+SAMPLE_DICT = {
+    'The thousand': ['injuries'],
+    'thousand injuries': ['of'],
+    'injuries of': ['Fortunato'],
+    'of Fortunato': ['I'],
+    'Fortunato I': ['had'],
+    'I had': ['borne'],
+    'had borne': ['as'],
+    'borne as': ['I'],
+    'as I': ['best'],
+    'I best': ['could,'],
+    'best could,': ['but'],
+    'could, but': ['when'],
+    'but when': ['he']
+}
 
 
 def test_list():
@@ -20,27 +30,14 @@ def test_dict():
     assert type(make_dict(read_text('../poe_test.txt'))) == dict
 
 
-# @pytest.mark.parametrize('string, key, value', DICT_TEST)
-# def test_dict_entry(string, key, value):
-#     """Testing dictionary values for given keys."""
-#     from trigrams import make_dict, read_text
-#     story_dict = make_dict(read_text('../poe_test.txt'))
-#     assert story_dict[key] == value
-
-
-"""These are tests ideas for testing our coming up functions."""
-def test_word_count(word_count):
-    """Testing word count of 200."""
+def test_make_story():
+    """Testing story for length."""
     from trigrams import make_story
-    assert word_count == 200
+    assert len(make_story(SAMPLE_DICT, 100).split()) == 100
 
 
-def test_story(story):
-    """Testing story function from key/val pairs."""
-    from trigrams import make_story
-    assert make_story == story 
-
-
-def test_key_val_dups():
-    """Testing key/val pairs for duplicates."""
-    from trigrams import 
+def test_dict_entry():
+    """Testing dictionary values for given keys."""
+    from trigrams import make_dict, read_text
+    story_dict = make_dict(read_text('../poe_test_short.txt'))
+    assert story_dict == SAMPLE_DICT
