@@ -4,7 +4,7 @@ import random
 
 
 # function that implements trigram algorithm
-def main(some_file, word_count):
+def main(some_file='../poe_test.txt', word_count=200):
     """Take a file, make a dictionary, and return a story."""
     print(make_story((make_dict(read_text(some_file))), word_count))
 
@@ -45,9 +45,8 @@ def make_story(story_dict, word_count):
         else:
             story_add = random.choice(list(story_dict.keys())) + ' '
         story = story + story_add
-    print(len(story.split()))
     return story
 
 
 if __name__ == '__main__':  # pragma no cover
-    main('../poe_test.txt', 200)
+    main()
