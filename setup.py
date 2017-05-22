@@ -17,7 +17,7 @@ setup(
     author_email='bonanashelby@gmail.com',
     license='MIT',
     py_modules=['trigrams', 'test_trigrams'],
-    package_dir={' ': 'src'},
+    package_dir={'': 'src'},
     install_requires=dependencies,
     extras_require=extra_packages,
     entry_points={
